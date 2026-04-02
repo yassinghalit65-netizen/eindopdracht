@@ -5,3 +5,62 @@
  *function: NAW (Naam, Adres, Woon plaats)
  */
 ?>
+<?php
+global $conn;
+
+function StartConnection($dbname)
+{
+
+    global $conn;
+
+    $host = "localhost";
+    //$dbname = "testdb";
+    $username = "root";
+    $password = ""; // standaard leeg bij XAMPP
+
+    try {
+        $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+
+        // Zet PDO foutmeldingen aan
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        return $conn;
+
+    } catch (PDOException $e) {
+        echo "Verbinding mislukt: " . $e->getMessage();
+    }
+}
+
+function ExecuteSelectQuery($query)
+{
+
+    global $conn;
+
+    try {
+
+        //$conn = startConnection($dbname);
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+
+        // Resultaat als associatieve array
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result;
+    } catch (PDOException $e) {
+        echo "Query fout: " . $e->getMessage();
+        return [];
+    }
+}
+function ExucuteQuery($quary){
+    global $conn;
+    try {
+        $result = $conn->exec($quary);
+
+        //exec() geeft direct aantal affected row terug
+        return $result;
+    }
+    catch(PDOExeption $e){
+        echo "Quary fout" . $e->getMessege();
+        return 0;
+    }
+}
