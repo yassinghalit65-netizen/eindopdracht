@@ -12,7 +12,14 @@
 include "include/function.php"
 ?>
 <main>
-<form method="post" action="resultaat.php">
+<h1>Welcome bij mijn data base </h1>
+
+    <p>
+        <li>wat kan je hier doen</li>
+        <li>Naw gegevens toe voegen</li>
+        <li>Naw gegevens bewerken</li>
+        <li>Naw gegevens verwijderen</li>
+    </p>
 </main>
 </body>
 </html>
