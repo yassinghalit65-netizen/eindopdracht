@@ -1,0 +1,18 @@
+/*
+*Gemaakt:Y.Ghalit
+*Date: 5-03-2026
+*
+ */
+
+/* Reset marges en paddings voor alle elementen */
+* {
+    margin: 0;           /* Verwijdert alle buitenmarges */
+    padding: 0;          /* Verwijdert alle binnenmarges */
+    box-sizing: border-box; /* Zorgt dat padding en border binnen de breedte vallen */
+}
+/* Basis stijlen voor de hele pagina */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern lettertype */
+    background-color: #f5f5f5;  /* Lichtgrijze achtergrond voor de hele pagina */
+    min-height: 100vh;           /* Zorgt dat de body minimaal de volledige schermhoogte heeft */
+}
