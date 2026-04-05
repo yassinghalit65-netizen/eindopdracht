@@ -8,32 +8,38 @@
  */
  ?>
 
-<!doctype html>
-<html lang="en">
+
+!doctype html>
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>NAW Database Systeem</title>
     <link rel="stylesheet" href="css.css">
 </head>
 <body>
-<?php
-include "include/function.php"
-?>
+
+<nav>
+    <a href="index.php" class="active">Home</a>
+    <a href="Naw.php">Bekijken</a>
+    <a href="create.php">Toevoegen</a>
+    <a href="edit.php">Bewerken</a>
+    <a href="delete.php">Verwijderen</a>
+    <a href="test.php">test</a>
+</nav>
+
 <main>
-    <nav>
+    <h1>Welkom bij mijn database</h1>
 
-    </nav>
-<h1>Welcome bij mijn data base </h1>
-
+    <p>Wat kan je hier doen:</p>
     <p>
-        <li>wat kan je hier doen</li>
-        <li>Naw gegevens toe voegen</li>
-        <li>Naw gegevens bewerken</li>
-        <li>Naw gegevens verwijderen</li>
+        <li>NAW gegevens bekijken</li>
+        <li>NAW gegevens toevoegen</li>
+        <li>NAW gegevens bewerken</li>
+        <li>NAW gegevens verwijderen</li>
     </p>
 </main>
+
 </body>
 </html>

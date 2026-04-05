@@ -1,7 +1,7 @@
 /*
 *Gemaakt:Y.Ghalit
 *Date: 5-03-2026
-*
+*Functie: mooi maken van de website
  */
 
 /* Reset marges en paddings voor alle elementen */
@@ -15,4 +15,46 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern lettertype */
     background-color: #f5f5f5;  /* Lichtgrijze achtergrond voor de hele pagina */
     min-height: 100vh;           /* Zorgt dat de body minimaal de volledige schermhoogte heeft */
+}
+/* Stijlen voor de navigatiebalk - het zwarte blok */
+nav {
+    background-color: #000000;  /* Zwarte achtergrond zoals gevraagd */
+    padding: 1rem 2rem;         /* Binnenmarge: 1rem boven/onder, 2rem links/rechts */
+    position: sticky;           /* Maakt de navbar plakkerig (blijft bovenaan bij scrollen) */
+    top: 0;                     /* Plakt aan de bovenkant van het scherm */
+    width: 100%;                /* Neemt de volledige breedte van het scherm */
+    z-index: 1000;              /* Zorgt dat de navbar boven andere elementen zweeft */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Donkere schaduw onder de navbar voor diepte */
+    margin-bottom: 0;           /* Geen marge onder de navbar (main krijgt eigen marge) */
+}
+/* Flexbox layout voor de navigatielinks */
+nav {
+    display: flex;              /* Zet de links naast elkaar in een flexibele rij */
+    justify-content: center;    /* Centreert de links horizontaal */
+    align-items: center;        /* Centreert de links verticaal */
+    gap: 2rem;                  /* Ruimte van 2rem tussen elke link */
+    flex-wrap: wrap;            /* Zorgt dat links naar de volgende regel gaan bij klein scherm */
+}
+/* Flexbox layout voor de navigatielinks */
+nav {
+    display: flex;              /* Zet de links naast elkaar in een flexibele rij */
+    justify-content: center;    /* Centreert de links horizontaal */
+    align-items: center;        /* Centreert de links verticaal */
+    gap: 2rem;                  /* Ruimte van 2rem tussen elke link */
+    flex-wrap: wrap;            /* Zorgt dat links naar de volgende regel gaan bij klein scherm */
+}
+/* Stijlen voor de hoofdtitel */
+h1 {
+    color: #000000;             /* Zwarte tekstkleur */
+    font-size: 2.5rem;          /* Groot lettertype (2.5rem = ongeveer 40px) */
+    margin-bottom: 2rem;        /* Ruimte onder de titel */
+    text-align: center;         /* Centreert de titel horizontaal */
+    border-bottom: 3px solid #000000; /* Zwarte lijn onder de titel */
+    padding-bottom: 0.5rem;     /* Ruimte tussen tekst en de lijn */
+    display: inline-block;      /* Zorgt dat de lijn alleen onder de tekst komt */
+    width: 100%;                /* Neemt volledige breedte in beslag */
+}
+/* Ruimte boven de lijst */
+main p {
+    margin-top: 1.5rem;         /* Marges boven de paragraaf */
 }

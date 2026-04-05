@@ -6,61 +6,31 @@
  */
 ?>
 <?php
-global $conn;
+
+$conn = null;
 
 function StartConnection($dbname)
 {
-
     global $conn;
-
     $host = "localhost";
-    //$dbname = "testdb";
-    $username = "root";
-    $password = ""; // standaard leeg bij XAMPP
+    $user = "root";
+    $pass = "";
 
-    try {
-        $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-
-        // Zet PDO foutmeldingen aan
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        return $conn;
-
-    } catch (PDOException $e) {
-        echo "Verbinding mislukt: " . $e->getMessage();
-    }
+    $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    return $conn;
 }
 
 function ExecuteSelectQuery($query)
 {
-
     global $conn;
-
-    try {
-
-        //$conn = startConnection($dbname);
-        $stmt = $conn->prepare($query);
-        $stmt->execute();
-
-        // Resultaat als associatieve array
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        return $result;
-    } catch (PDOException $e) {
-        echo "Query fout: " . $e->getMessage();
-        return [];
-    }
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
-function ExucuteQuery($quary){
-    global $conn;
-    try {
-        $result = $conn->exec($quary);
 
-        //exec() geeft direct aantal affected row terug
-        return $result;
-    }
-    catch(PDOExeption $e){
-        echo "Quary fout" . $e->getMessege();
-        return 0;
-    }
+function ExecuteQuery($query)
+{
+    global $conn;
+    return $conn->exec($query);
 }
