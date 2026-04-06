@@ -6,21 +6,20 @@
  */
 ?>
 <?php
-/**
- * Bestand: verwijder.php
- * Functie: verwijderen van gegevens
- */
 
 include "include/function.php";
 StartConnection("naw_system");
 
-// Check of er een ID is meegegeven
-if(isset($_GET['id'])) {
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
     ExecuteQuery("DELETE FROM nawdb WHERE id = $id");
+
+    // Reset de AUTO_INCREMENT naar het hoogste ID + 1
+    ExecuteQuery("SET @count = 0");
+    ExecuteQuery("UPDATE nawdb SET id = @count:= @count + 1");
+    ExecuteQuery("ALTER TABLE nawdb AUTO_INCREMENT = 1");
 }
 
-// Ga terug naar de hoofdpagina
 header("Location: Naw.php");
 exit();
-?>
+
