@@ -10,54 +10,66 @@ global $conn;
 
 function StartConnection($dbname)
 {
-
     global $conn;
-
     $host = "localhost";
-//$dbname = "testdb";
     $username = "root";
-    $password = ""; // standaard leeg bij XAMPP
+    $password = "";
 
     try {
         $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-
-// Zet PDO foutmeldingen aan
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
         return $conn;
-
     } catch (PDOException $e) {
-        echo "Verbinding mislukt: " . $e->getMessage();
+        die("Verbinding mislukt: " . $e->getMessage());
     }
 }
 
+// VEILIGE VERSIE met prepared statements
+function ExecuteSelectQuerySafe($query, $params = [])
+{
+    global $conn;
+    try {
+        $stmt = $conn->prepare($query);
+        $stmt->execute($params);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        die("Query fout: " . $e->getMessage());
+    }
+}
+
+// VEILIGE VERSIE voor INSERT, UPDATE, DELETE
+function ExecuteQuerySafe($query, $params = [])
+{
+    global $conn;
+    try {
+        $stmt = $conn->prepare($query);
+        $stmt->execute($params);
+        return $stmt->rowCount();
+    } catch (PDOException $e) {
+        die("Query fout: " . $e->getMessage());
+    }
+}
+
+// OUDE functies (niet meer gebruiken - alleen voor compatibiliteit)
 function ExecuteSelectQuery($query)
 {
-
     global $conn;
-
     try {
-
-//$conn = startConnection($dbname);
         $stmt = $conn->prepare($query);
         $stmt->execute();
-
-// Resultaat als associatieve array
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        return $result;
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
-        echo "Query fout: " . $e->getMessage();
-        return [];
-    }
-}function ExecuteQuery($query){
-    global $conn;
-    try {
-        $result = $conn->exec($query);
-        return $result;
-    }
-    catch(PDOException $e){
-        echo "Query fout: " . $e->getMessage();
-        return 0;
+        die("Query fout: " . $e->getMessage());
     }
 }
+
+function ExecuteQuery($query)
+{
+    global $conn;
+    try {
+        return $conn->exec($query);
+    } catch (PDOException $e) {
+        die("Query fout: " . $e->getMessage());
+    }
+}
+?>
