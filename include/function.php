@@ -50,17 +50,14 @@ function ExecuteSelectQuery($query)
         echo "Query fout: " . $e->getMessage();
         return [];
     }
-}
-function ExucuteQuery($quary){
+}function ExecuteQuery($query){
     global $conn;
     try {
-        $result = $conn->exec($quary);
-
-//exec() geeft direct aantal affected row terug
+        $result = $conn->exec($query);
         return $result;
     }
-    catch(PDOExeption $e){
-        echo "Quary fout" . $e->getMessege();
+    catch(PDOException $e){
+        echo "Query fout: " . $e->getMessage();
         return 0;
     }
 }
