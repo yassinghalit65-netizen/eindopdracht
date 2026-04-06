@@ -4,57 +4,189 @@
 *Functie: mooi maken van de website
  */
 
-/* Reset marges en paddings voor alle elementen */
+
+
+
 * {
-    margin: 0;           /* Verwijdert alle buitenmarges */
-    padding: 0;          /* Verwijdert alle binnenmarges */
-    box-sizing: border-box; /* Zorgt dat padding en border binnen de breedte vallen */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-/* Basis stijlen voor de hele pagina */
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern lettertype */
-    background-color: #f5f5f5;  /* Lichtgrijze achtergrond voor de hele pagina */
-    min-height: 100vh;           /* Zorgt dat de body minimaal de volledige schermhoogte heeft */
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
 }
-/* Stijlen voor de navigatiebalk - het zwarte blok */
+
+
+
 nav {
-    background-color: #000000;  /* Zwarte achtergrond zoals gevraagd */
-    padding: 1rem 2rem;         /* Binnenmarge: 1rem boven/onder, 2rem links/rechts */
-    position: sticky;           /* Maakt de navbar plakkerig (blijft bovenaan bij scrollen) */
-    top: 0;                     /* Plakt aan de bovenkant van het scherm */
-    width: 100%;                /* Neemt de volledige breedte van het scherm */
-    z-index: 1000;              /* Zorgt dat de navbar boven andere elementen zweeft */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Donkere schaduw onder de navbar voor diepte */
-    margin-bottom: 0;           /* Geen marge onder de navbar (main krijgt eigen marge) */
+    background-color: #333;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
-/* Flexbox layout voor de navigatielinks */
-nav {
-    display: flex;              /* Zet de links naast elkaar in een flexibele rij */
-    justify-content: center;    /* Centreert de links horizontaal */
-    align-items: center;        /* Centreert de links verticaal */
-    gap: 2rem;                  /* Ruimte van 2rem tussen elke link */
-    flex-wrap: wrap;            /* Zorgt dat links naar de volgende regel gaan bij klein scherm */
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
 }
-/* Flexbox layout voor de navigatielinks */
-nav {
-    display: flex;              /* Zet de links naast elkaar in een flexibele rij */
-    justify-content: center;    /* Centreert de links horizontaal */
-    align-items: center;        /* Centreert de links verticaal */
-    gap: 2rem;                  /* Ruimte van 2rem tussen elke link */
-    flex-wrap: wrap;            /* Zorgt dat links naar de volgende regel gaan bij klein scherm */
+
+nav a:hover {
+    background-color: #4CAF50;
 }
-/* Stijlen voor de hoofdtitel */
+
+nav a.active {
+    background-color: #4CAF50;
+}
+
+
+
+main {
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Kleine container voor formulieren */
+main.form-container {
+    max-width: 600px;
+}
+
+/* ========================================
+   KOPTEKSTEN
+   ======================================== */
+
 h1 {
-    color: #000000;             /* Zwarte tekstkleur */
-    font-size: 2.5rem;          /* Groot lettertype (2.5rem = ongeveer 40px) */
-    margin-bottom: 2rem;        /* Ruimte onder de titel */
-    text-align: center;         /* Centreert de titel horizontaal */
-    border-bottom: 3px solid #000000; /* Zwarte lijn onder de titel */
-    padding-bottom: 0.5rem;     /* Ruimte tussen tekst en de lijn */
-    display: inline-block;      /* Zorgt dat de lijn alleen onder de tekst komt */
-    width: 100%;                /* Neemt volledige breedte in beslag */
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
 }
-/* Ruimte boven de lijst */
-main p {
-    margin-top: 1.5rem;         /* Marges boven de paragraaf */
+
+/* ========================================
+   KNOppen & LINKS
+   ======================================== */
+
+.btn {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.btn-edit {
+    background-color: #2196F3;
+}
+
+.btn-edit:hover {
+    background-color: #0b7dda;
+}
+
+.btn-delete {
+    background-color: #f44336;
+}
+
+.btn-delete:hover {
+    background-color: #da190b;
+}
+
+.btn-cancel {
+    background-color: #666;
+    margin-left: 10px;
+}
+
+.btn-cancel:hover {
+    background-color: #555;
+}
+
+.btn-submit {
+    background-color: #4CAF50;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-update {
+    background-color: #2196F3;
+    border: none;
+    cursor: pointer;
+}
+
+/* ========================================
+   TABEL STIJLEN
+   ======================================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* ========================================
+   FORMULIER STIJLEN
+   ======================================== */
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* ========================================
+   MELDINGEN
+   ======================================== */
+
+.geen-data {
+    text-align: center;
+    padding: 50px;
+    color: #666;
 }
