@@ -6,11 +6,10 @@
  */
 ?>
 <?php
-
 include "include/function.php";
 StartConnection("naw_system");
 
-if (isset($_GET['id'])) {
+if(isset($_GET['id'])) {
     $id = $_GET['id'];
     ExecuteQuery("DELETE FROM nawdb WHERE id = $id");
 
@@ -22,4 +21,6 @@ if (isset($_GET['id'])) {
 
 header("Location: Naw.php");
 exit();
+?>
+
 

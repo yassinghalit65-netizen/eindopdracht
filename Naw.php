@@ -57,6 +57,7 @@ $resultaten = ExecuteSelectQuery("SELECT * FROM nawdb");
                     <table class="table table-bordered table-striped table-hover">
                         <thead class="table-success">
                         <tr>
+                            <th>ID</th>      <!-- ID kolom terug -->
                             <th>Naam</th>
                             <th>Adres</th>
                             <th>Postcode</th>
@@ -69,6 +70,7 @@ $resultaten = ExecuteSelectQuery("SELECT * FROM nawdb");
                         <tbody>
                         <?php foreach($resultaten as $row): ?>
                             <tr>
+                                <td><?php echo $row['id']; ?></td>  <!-- ID waarde terug -->
                                 <td><?php echo htmlspecialchars($row['naam']); ?></td>
                                 <td><?php echo htmlspecialchars($row['adres']); ?></td>
                                 <td><?php echo htmlspecialchars($row['postcode']); ?></td>
