@@ -5,8 +5,10 @@
  *function: oproepen van de Data base
  */
 ?>
+
 <?php
-global $conn;
+    global
+ $conn;
 
 function StartConnection($dbname)
 {

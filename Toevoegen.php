@@ -34,7 +34,7 @@ if(isset($_POST['submit'])) {
         // AVG: Log de toevoeging
         $tijd = date('Y-m-d H:i:s');
         $log = "[$tijd] Toegevoegd: $naam, $woonplaats\n";
-        file_put_contents('avg_log.txt', $log, FILE_APPEND);
+
 
         header("Location: Naw.php");
         exit();
@@ -71,7 +71,7 @@ if(isset($_POST['submit'])) {
         <label>Email:</label>
         <input type="email" name="email" required>
         <label>Telefoon:</label>
-        <input type="text" name="telefoon" required>
+        <input type="number" name="telefoon" required>
         <br>
         <input type="submit" name="submit" value="Opslaan">
         <a href="Naw.php">Annuleer</a>

@@ -1,11 +1,9 @@
 <?php
 /*
- * Gemaakt:Y.Ghalit
- * Date:5-03-2026
+ * Gemaakt: Y.Ghalit
+ * Date: 5-03-2026
  * functie: laat de gegevens van de data base zien
  */
-?>
-<?php
 include "include/function.php";
 StartConnection("naw_system");
 $resultaten = ExecuteSelectQuery("SELECT * FROM nawdb");
@@ -57,7 +55,7 @@ $resultaten = ExecuteSelectQuery("SELECT * FROM nawdb");
                     <table class="table table-bordered table-striped table-hover">
                         <thead class="table-success">
                         <tr>
-                            <th>ID</th>      <!-- ID kolom terug -->
+                            <th>#</th>           <!-- Volgnummer ipv ID -->
                             <th>Naam</th>
                             <th>Adres</th>
                             <th>Postcode</th>
@@ -68,9 +66,12 @@ $resultaten = ExecuteSelectQuery("SELECT * FROM nawdb");
                         </tr>
                         </thead>
                         <tbody>
-                        <?php foreach($resultaten as $row): ?>
+                        <?php
+                        $nummer = 1;  // Tellertje voor dynamisch volgnummer
+                        foreach($resultaten as $row):
+                            ?>
                             <tr>
-                                <td><?php echo $row['id']; ?></td>  <!-- ID waarde terug -->
+                                <td><?php echo $nummer++; ?></td>  <!-- Dynamisch volgnummer -->
                                 <td><?php echo htmlspecialchars($row['naam']); ?></td>
                                 <td><?php echo htmlspecialchars($row['adres']); ?></td>
                                 <td><?php echo htmlspecialchars($row['postcode']); ?></td>
