@@ -8,7 +8,7 @@
 ?>
 <?php
 include "include/function.php";
-StartConnection("naw_system");
+StartConnection("test");
 $id = $_GET['id'];
 
 if(isset($_POST['submit'])) {

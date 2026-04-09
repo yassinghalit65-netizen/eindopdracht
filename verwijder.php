@@ -10,7 +10,7 @@
 
 session_start();
 include "include/function.php";
-StartConnection("naw_system");
+StartConnection("test");
 
 // Controleer of ID bestaat en een getal is
 if(isset($_GET['id']) && is_numeric($_GET['id'])) {
@@ -29,7 +29,7 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])) {
         $gebruiker = $_SERVER['REMOTE_ADDR'] ?? 'onbekend';
         $tijd = date('Y-m-d H:i:s');
         $log = "[$tijd] Verwijderd door: $gebruiker - ID: $id - Naam: " . $verwijderde_data['naam'] . "\n";
-        file_put_contents('avg_log.txt', $log, FILE_APPEND);
+
     }
 }
 

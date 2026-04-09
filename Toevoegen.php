@@ -10,7 +10,7 @@
 <?php
 session_start();
 include "include/function.php";
-StartConnection("naw_system");
+StartConnection("test");
 
 // Controleer of formulier is verzonden
 if(isset($_POST['submit'])) {

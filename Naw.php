@@ -5,7 +5,7 @@
  * functie: laat de gegevens van de data base zien
  */
 include "include/function.php";
-StartConnection("naw_system");
+StartConnection("test");
 $resultaten = ExecuteSelectQuery("SELECT * FROM nawdb");
 ?>
 <!DOCTYPE html>
