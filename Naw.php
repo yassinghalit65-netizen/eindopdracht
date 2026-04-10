@@ -24,7 +24,7 @@ $resultaten = ExecuteSelectQuery("SELECT * FROM gebruikers");
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="index.php">📋 NAW Systeem</a>
+        <a class="navbar-brand" href="index.php"> NAW Systeem</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -45,7 +45,7 @@ $resultaten = ExecuteSelectQuery("SELECT * FROM gebruikers");
 <div class="container mt-4">
     <div class="card shadow">
         <div class="card-header bg-success text-white">
-            <h1 class="h3 mb-0">📋 NAW Gegevens</h1>
+            <h1 class="h3 mb-0">NAW Gegevens</h1>
         </div>
         <div class="card-body">
             <a href="Toevoegen.php" class="btn btn-success mb-3"> Nieuwe NAW</a>
@@ -79,8 +79,8 @@ $resultaten = ExecuteSelectQuery("SELECT * FROM gebruikers");
                                 <td><?php echo htmlspecialchars($row['email']); ?></td>
                                 <td><?php echo htmlspecialchars($row['telefoon']); ?></td>
                                 <td>
-                                    <a href="bewerk.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-primary">✏️ Bewerken</a>
-                                    <a href="verwijder.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Weet u het zeker?')">🗑️ Verwijderen</a>
+                                    <a href="bewerk.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-primary"> Bewerken</a>
+                                    <a href="verwijder.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Weet u het zeker?')">Verwijderen</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
