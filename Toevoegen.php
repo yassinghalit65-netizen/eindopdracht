@@ -10,7 +10,7 @@
 <?php
 session_start();
 include "include/function.php";
-StartConnection("test2");
+StartConnection("tes2");
 
 // Controleer of formulier is verzonden
 if(isset($_POST['submit'])) {
