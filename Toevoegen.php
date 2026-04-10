@@ -12,9 +12,9 @@ session_start();
 include "include/function.php";
 StartConnection("tes2");
 
-// Controleer of formulier is verzonden
+// checks if it is send
 if(isset($_POST['submit'])) {
-    // Input valideren en opschonen
+    // validator
     $naam = htmlspecialchars(trim($_POST['naam']));
     $adres = htmlspecialchars(trim($_POST['adres']));
     $postcode = htmlspecialchars(trim($_POST['postcode']));
@@ -22,7 +22,7 @@ if(isset($_POST['submit'])) {
     $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
     $telefoon = htmlspecialchars(trim($_POST['telefoon']));
 
-    // Controleer of alle velden geldig zijn
+    // Checks if the field are valid
     if($naam && $adres && $postcode && $woonplaats && $email && $telefoon) {
         // VEILIGE INSERT met prepared statement
         ExecuteQuerySafe(
@@ -31,7 +31,7 @@ if(isset($_POST['submit'])) {
                 [$naam, $adres, $postcode, $woonplaats, $email, $telefoon]
         );
 
-        // AVG: Log de toevoeging
+        // it adds a log
         $tijd = date('Y-m-d H:i:s');
         $log = "[$tijd] Toegevoegd: $naam, $woonplaats\n";
 

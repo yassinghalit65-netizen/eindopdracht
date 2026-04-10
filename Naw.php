@@ -16,7 +16,7 @@ $resultaten = ExecuteSelectQuery("SELECT * FROM gebruikers");
     <title>NAW Gegevens</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Eigen CSS -->
+    <!-- own CSS -->
     <link rel="stylesheet" href="css.css">
 </head>
 <body class="bg-light">
@@ -67,11 +67,11 @@ $resultaten = ExecuteSelectQuery("SELECT * FROM gebruikers");
                         </thead>
                         <tbody>
                         <?php
-                        $nummer = 1;  // Tellertje voor dynamisch volgnummer
+                        $nummer = 1;  // checks the order
                         foreach($resultaten as $row):
                             ?>
                             <tr>
-                                <td><?php echo $nummer++; ?></td>  <!-- Dynamisch volgnummer -->
+                                <td><?php echo $nummer++; ?></td>  <!--the order -->
                                 <td><?php echo htmlspecialchars($row['naam']); ?></td>
                                 <td><?php echo htmlspecialchars($row['adres']); ?></td>
                                 <td><?php echo htmlspecialchars($row['postcode']); ?></td>
@@ -96,7 +96,7 @@ $resultaten = ExecuteSelectQuery("SELECT * FROM gebruikers");
     </div>
 </div>
 
-<!-- Bootstrap JS -->
+<!-- js code -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -12,28 +12,23 @@ session_start();
 include "include/function.php";
 StartConnection("tes2");
 
-// Controleer of ID bestaat en een getal is
+// Checks if the id exist
 if(isset($_GET['id']) && is_numeric($_GET['id'])) {
     $id = $_GET['id'];
 
-    // Eerst ophalen wat er verwijderd gaat worden (voor logging)
+    // checks what you want to delete
     $data = ExecuteSelectQuerySafe("SELECT * FROM gebruikers WHERE id = ?", [$id]);
 
     if(!empty($data)) {
         $verwijderde_data = $data[0];
 
-        // VEILIG verwijderen met prepared statement
+        // removes the item safely
         ExecuteQuerySafe("DELETE FROM gebruikers WHERE id = ?", [$id]);
 
-        // AVG: Log de verwijdering (wie, wat, wanneer)
-        $gebruiker = $_SERVER['REMOTE_ADDR'] ?? 'onbekend';
-        $tijd = date('Y-m-d H:i:s');
-        $log = "[$tijd] Verwijderd door: $gebruiker - ID: $id - Naam: " . $verwijderde_data['naam'] . "\n";
 
     }
 }
-
-// Ga terug naar hoofdpagina
+// Goes back to Naw.php
 header("Location: Naw.php");
 exit();
 ?>
