@@ -20,7 +20,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="index.php">📋 NAW Systeem</a>
+        <a class="navbar-brand" href="index.php"> NAW Systeem</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -40,7 +40,7 @@
 <div class="container mt-4">
     <div class="card shadow text-center">
         <div class="card-header bg-dark text-white">
-            <h1 class="h3 mb-0">🏠 Welkom bij het NAW Systeem</h1>
+            <h1 class="h3 mb-0"> Welkom bij het NAW Systeem</h1>
         </div>
         <div class="card-body">
             <p class="lead">Dit systeem beheert NAW-gegevens (Naam, Adres, Woonplaats).</p>
