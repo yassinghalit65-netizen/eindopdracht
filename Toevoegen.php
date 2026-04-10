@@ -26,7 +26,7 @@ if(isset($_POST['submit'])) {
     if($naam && $adres && $postcode && $woonplaats && $email && $telefoon) {
         // VEILIGE INSERT met prepared statement
         ExecuteQuerySafe(
-                "INSERT INTO nawdb (naam, adres, postcode, woonplaats, email, telefoon) 
+                "INSERT INTO gebruikers (naam, adres, postcode, woonplaats, email, telefoon) 
              VALUES (?, ?, ?, ?, ?, ?)",
                 [$naam, $adres, $postcode, $woonplaats, $email, $telefoon]
         );

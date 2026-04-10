@@ -6,7 +6,7 @@
  */
 include "include/function.php";
 StartConnection("test");
-$resultaten = ExecuteSelectQuery("SELECT * FROM nawdb");
+$resultaten = ExecuteSelectQuery("SELECT * FROM gebruikers");
 ?>
 <!DOCTYPE html>
 <html lang="nl">

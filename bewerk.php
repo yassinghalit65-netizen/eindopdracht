@@ -12,7 +12,7 @@ StartConnection("test");
 $id = $_GET['id'];
 
 if(isset($_POST['submit'])) {
-    ExecuteQuery("UPDATE nawdb SET 
+    ExecuteQuery("UPDATE gebruikers SET 
                   naam='{$_POST['naam']}', 
                   adres='{$_POST['adres']}', 
                   postcode='{$_POST['postcode']}', 

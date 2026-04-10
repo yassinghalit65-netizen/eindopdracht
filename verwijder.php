@@ -17,13 +17,13 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])) {
     $id = $_GET['id'];
 
     // Eerst ophalen wat er verwijderd gaat worden (voor logging)
-    $data = ExecuteSelectQuerySafe("SELECT * FROM nawdb WHERE id = ?", [$id]);
+    $data = ExecuteSelectQuerySafe("SELECT * FROM gebruikers WHERE id = ?", [$id]);
 
     if(!empty($data)) {
         $verwijderde_data = $data[0];
 
         // VEILIG verwijderen met prepared statement
-        ExecuteQuerySafe("DELETE FROM nawdb WHERE id = ?", [$id]);
+        ExecuteQuerySafe("DELETE FROM gebruikers WHERE id = ?", [$id]);
 
         // AVG: Log de verwijdering (wie, wat, wanneer)
         $gebruiker = $_SERVER['REMOTE_ADDR'] ?? 'onbekend';
