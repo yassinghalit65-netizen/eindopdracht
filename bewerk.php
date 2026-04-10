@@ -8,7 +8,7 @@
 ?>
 <?php
 include "include/function.php";
-StartConnection("test");
+StartConnection("test2");
 $id = $_GET['id'];
 
 if(isset($_POST['submit'])) {

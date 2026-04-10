@@ -10,7 +10,7 @@
 
 session_start();
 include "include/function.php";
-StartConnection("test");
+StartConnection("test2");
 
 // Controleer of ID bestaat en een getal is
 if(isset($_GET['id']) && is_numeric($_GET['id'])) {

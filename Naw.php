@@ -5,7 +5,7 @@
  * functie: laat de gegevens van de data base zien
  */
 include "include/function.php";
-StartConnection("test");
+StartConnection("test2");
 $resultaten = ExecuteSelectQuery("SELECT * FROM gebruikers");
 ?>
 <!DOCTYPE html>
