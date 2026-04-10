@@ -55,7 +55,7 @@ if(isset($_POST['submit'])) {
     <a href="Naw.php">Bekijken</a>
 </nav>
 <main>
-    <h1>➕ NAW Toevoegen</h1>
+    <h1> NAW Toevoegen</h1>
     <?php if(isset($error)): ?>
         <p style="color:red;"><?php echo $error; ?></p>
     <?php endif; ?>

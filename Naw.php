@@ -48,7 +48,7 @@ $resultaten = ExecuteSelectQuery("SELECT * FROM gebruikers");
             <h1 class="h3 mb-0">📋 NAW Gegevens</h1>
         </div>
         <div class="card-body">
-            <a href="Toevoegen.php" class="btn btn-success mb-3">➕ Nieuwe NAW</a>
+            <a href="Toevoegen.php" class="btn btn-success mb-3"> Nieuwe NAW</a>
 
             <?php if(!empty($resultaten)): ?>
                 <div class="table-responsive">

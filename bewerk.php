@@ -24,7 +24,7 @@ if(isset($_POST['submit'])) {
     exit();
 }
 
-$row = ExecuteSelectQuery("SELECT * FROM nawdb WHERE id=$id")[0];
+$row = ExecuteSelectQuery("SELECT * FROM gebruikers WHERE id=$id")[0];
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -39,7 +39,7 @@ $row = ExecuteSelectQuery("SELECT * FROM nawdb WHERE id=$id")[0];
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="index.php">📋 NAW Systeem</a>
+        <a class="navbar-brand" href="index.php"> NAW Systeem</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -59,7 +59,7 @@ $row = ExecuteSelectQuery("SELECT * FROM nawdb WHERE id=$id")[0];
 <div class="container mt-4">
     <div class="card shadow">
         <div class="card-header bg-primary text-white">
-            <h1 class="h3 mb-0">✏️ NAW Bewerken</h1>
+            <h1 class="h3 mb-0"> NAW Bewerken</h1>
         </div>
         <div class="card-body">
             <form method="POST">
@@ -87,8 +87,8 @@ $row = ExecuteSelectQuery("SELECT * FROM nawdb WHERE id=$id")[0];
                     <label class="form-label">Telefoon:</label>
                     <input type="text" name="telefoon" class="form-control" value="<?php echo $row['telefoon']; ?>" required>
                 </div>
-                <button type="submit" name="submit" class="btn btn-primary">💾 Bijwerken</button>
-                <a href="Naw.php" class="btn btn-secondary">❌ Annuleer</a>
+                <button type="submit" name="submit" class="btn btn-primary"> Bijwerken</button>
+                <a href="Naw.php" class="btn btn-secondary"> Annuleer</a>
             </form>
         </div>
     </div>
